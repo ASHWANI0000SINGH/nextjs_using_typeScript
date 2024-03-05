@@ -1,12 +1,8 @@
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import Anime from "./anime/page";
-import Hobbies from "./components/Hobbies";
+import client from "@/lib/client";
+import { ApolloProvider } from "@apollo/client";
+import Anime from "./components/Anime";
 
-const page = () => {
-  const client = new ApolloClient({
-    uri: "https://graphql.anilist.co",
-    cache: new InMemoryCache(),
-  });
+const Page = () => {
   return (
     <>
       <ApolloProvider client={client}>
@@ -16,4 +12,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
